@@ -17,8 +17,8 @@ public class LimitHauteur260 {
 
         Location<World> playerlocation = event.getTargetEntity().getLocation();
 
-        if(playerlocation.getY() >= 260){
-            player.setLocation(playerlocation.add(0,-5,0));
+        if(playerlocation.getY() >= 280){
+            player.setLocation(playerlocation.add(0,-20,0));
             Sponge.getCommandManager().process(Sponge.getServer().getConsole(), "pokefaint " + player.getName());
             player.sendMessage(Text.of(TextColors.GRAY, "Hey! Vous ne pouvez pas monter à une hauteur supérieur à 260 blocks."));
         }
