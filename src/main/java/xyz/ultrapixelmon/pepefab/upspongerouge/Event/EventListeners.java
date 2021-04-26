@@ -69,7 +69,7 @@ public class EventListeners {
             if(itemStack.getType().getName().contains("pixelmon:gold_bottle_cap") || itemStack.getType().getName().contains("pixelmon:silver_bottle_cap"))
                 if(!itemStack.get(Keys.ITEM_LORE).isPresent()){
                     transaction.setCustom(ItemStackSnapshot.NONE);
-                    System.out.println("Silver ou bottle supprimé " + player.getName());
+                    System.out.println("Silver ou bottle supprimé " + player.getName() + player.getLocation());
                     player.sendMessage(Text.of(TextColors.GRAY, "Les capsules d'or et d'argent sans nom ne sont pas utilisables sur le serveur."));
                 }
         }
