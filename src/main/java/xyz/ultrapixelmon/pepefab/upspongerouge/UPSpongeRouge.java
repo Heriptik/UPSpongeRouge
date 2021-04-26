@@ -21,7 +21,8 @@ import java.util.EventListener;
 
 @Plugin(
         id = "upspongerouge",
-        name = "UPSpongeRouge"
+        name = "UPSpongeRouge",
+        version = "1.1"
 )
 public class UPSpongeRouge {
 
