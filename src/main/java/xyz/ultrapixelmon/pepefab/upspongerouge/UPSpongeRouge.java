@@ -14,6 +14,7 @@ import org.spongepowered.api.scheduler.Task;
 import org.spongepowered.api.text.Text;
 
 import xyz.ultrapixelmon.pepefab.upspongerouge.Event.EventListeners;
+import xyz.ultrapixelmon.pepefab.upspongerouge.Event.LimitHauteur260;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Executor.*;
 
 import java.util.EventListener;
@@ -39,6 +40,7 @@ public class UPSpongeRouge {
 
         // Register Listener
         Sponge.getEventManager().registerListeners(this, new EventListeners());
+        Sponge.getEventManager().registerListeners(this, new LimitHauteur260());
 
         //Register command
         CommandSpec OpenLigue = CommandSpec.builder()
