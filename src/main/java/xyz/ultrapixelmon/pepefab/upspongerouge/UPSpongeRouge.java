@@ -22,7 +22,7 @@ import java.util.EventListener;
 @Plugin(
         id = "upspongerouge",
         name = "UPSpongeRouge",
-        version = "1.1"
+        version = "1.3"
 )
 public class UPSpongeRouge {
 
@@ -85,6 +85,14 @@ public class UPSpongeRouge {
                 .executor (new CustomBroadcastExecutor())
                 .build();
         Sponge.getCommandManager().register(this, CustomBroadcast, "custombroadcast");
+
+        CommandSpec RegardeTonChat = CommandSpec.builder()
+                .description(Text.of("Envoi un title aux joueurs lui demandant de regarder son chat"))
+                .permission("esttuafk.esttuafk")
+                .arguments(GenericArguments.onlyOne(GenericArguments.player(Text.of("pseudo"))))
+                .executor (new RegardeTonChat())
+                .build();
+        Sponge.getCommandManager().register(this, RegardeTonChat, "mategetvoulaitpoke", "regardetonchat");
 
         // Register TaskBuilder
         Task.builder().execute(() -> {
