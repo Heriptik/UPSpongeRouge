@@ -13,7 +13,6 @@ import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.scheduler.Task;
 import org.spongepowered.api.text.Text;
 
-import org.spongepowered.api.text.serializer.TextSerializers;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Event.EventListeners;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Event.LimitHauteur260;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Executor.*;
@@ -23,7 +22,7 @@ import java.util.EventListener;
 @Plugin(
         id = "upspongerouge",
         name = "UPSpongeRouge",
-        version = "1.3"
+        version = "1.4"
 )
 public class UPSpongeRouge {
 
