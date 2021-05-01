@@ -13,6 +13,7 @@ import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.scheduler.Task;
 import org.spongepowered.api.text.Text;
 
+import org.spongepowered.api.text.serializer.TextSerializers;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Event.EventListeners;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Event.LimitHauteur260;
 import xyz.ultrapixelmon.pepefab.upspongerouge.Executor.*;
@@ -42,6 +43,7 @@ public class UPSpongeRouge {
         // Register Listener
         Sponge.getEventManager().registerListeners(this, new EventListeners());
         Sponge.getEventManager().registerListeners(this, new LimitHauteur260());
+        Sponge.getEventManager().registerListeners(this, EventListener.class);
 
         //Register command
         CommandSpec OpenLigue = CommandSpec.builder()
@@ -76,8 +78,6 @@ public class UPSpongeRouge {
                 .build();
         Sponge.getCommandManager().register(this, CloseLigue, "closeconseil");
 
-        Sponge.getEventManager().registerListeners(this, EventListener.class);
-
         CommandSpec CustomBroadcast = CommandSpec.builder()
                 .description(Text.of("Commande pour envoyer un broadcast custom"))
                 .permission("custombroadcast.custombroadcast")
@@ -93,6 +93,17 @@ public class UPSpongeRouge {
                 .executor (new RegardeTonChat())
                 .build();
         Sponge.getCommandManager().register(this, RegardeTonChat, "mategetvoulaitpoke", "regardetonchat");
+
+        CommandSpec BanGTS = CommandSpec.builder()
+                .description(Text.of("Ban un joueur de la GTS pour un certain temps"))
+                .permission("bangts.bangts")
+                .arguments(
+                        GenericArguments.onlyOne(GenericArguments.player(Text.of("pseudo"))),
+                        GenericArguments.string(Text.of("durée")),
+                        GenericArguments.remainingJoinedStrings(Text.of("raison")))
+                .executor (new BanGTSExecutor())
+                .build();
+        Sponge.getCommandManager().register(this, BanGTS, "bangts");
 
         // Register TaskBuilder
         Task.builder().execute(() -> {
