@@ -10,7 +10,7 @@ import org.spongepowered.api.text.Text;
 import org.spongepowered.api.text.format.TextColors;
 import org.spongepowered.api.text.title.Title;
 
-public class RegardeTonChat implements CommandExecutor {
+public class RegardeTonChatExecutor implements CommandExecutor {
 
     @Override
     public CommandResult execute (CommandSource src, CommandContext args) throws CommandException {

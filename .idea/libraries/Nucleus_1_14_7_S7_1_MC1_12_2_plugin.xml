@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Nucleus-1.14.7-S7.1-MC1.12.2-plugin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/Nucleus-1.14.7-S7.1-MC1.12.2-plugin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

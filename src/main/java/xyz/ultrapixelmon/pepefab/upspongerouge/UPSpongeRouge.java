@@ -22,7 +22,7 @@ import java.util.EventListener;
 @Plugin(
         id = "upspongerouge",
         name = "UPSpongeRouge",
-        version = "1.4"
+        version = "1.5"
 )
 public class UPSpongeRouge {
 
@@ -89,7 +89,7 @@ public class UPSpongeRouge {
                 .description(Text.of("Envoi un title aux joueurs lui demandant de regarder son chat"))
                 .permission("esttuafk.esttuafk")
                 .arguments(GenericArguments.onlyOne(GenericArguments.player(Text.of("pseudo"))))
-                .executor (new RegardeTonChat())
+                .executor (new RegardeTonChatExecutor())
                 .build();
         Sponge.getCommandManager().register(this, RegardeTonChat, "mategetvoulaitpoke", "regardetonchat");
 
@@ -103,6 +103,13 @@ public class UPSpongeRouge {
                 .executor (new BanGTSExecutor())
                 .build();
         Sponge.getCommandManager().register(this, BanGTS, "bangts");
+
+        CommandSpec SetWarpEvent = CommandSpec.builder()
+                .description(Text.of("Modifier l'emplacement du Warp Event"))
+                .permission("setwarpevent.setwarpevent")
+                .executor (new SetWarpEventExecutor())
+                .build();
+        Sponge.getCommandManager().register(this, SetWarpEvent, "setwarpevent", "swe");
 
         // Register TaskBuilder
         Task.builder().execute(() -> {
